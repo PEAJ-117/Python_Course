@@ -16,19 +16,37 @@ class Person:
         self.name = name
         self.age = age
 
+    # Metodo de clase
+
+    @classmethod  # Transforma el metodo a uno propio para la clase
     # Metodo: Funcion definida dentro de una clase, describe el comportamiento de los objetos de esa clase.
-    def speak(self):
-        print(f"{self.name} speak: Hello, I am a person.")
+    def speak(cls):  # Se cambia de self a cls, esto se utiliza para metodos de clase para referirse a la clase misma
+        # print(f"{self.name} speak: Hello, I am a person.")
+        print("Hooola!!!")  # Se acorta la sintaxis
+
+    # Method Factory
+
+    @classmethod
+    def factory(cls):
+        return cls("Ritcher", 26)
 
 
-Person.eyes = 4
-my_friend = Person("Alice", 18)
-my_friend.eyes = 8
-my_friend2 = Person("Andy", 5)
+# Person.speak()
+person1 = Person("John", 54)
+person2 = Person("Mia", 34)
+person3 = Person("Karen", 18)
+person4 = Person.factory()
 
-print(Person.eyes)
-print(my_friend.eyes)
-print(my_friend2.eyes)
+print(person4.age, person4.name)
+
+# Person.eyes = 4
+# my_friend = Person("Alice", 18)
+# my_friend.eyes = 8
+# my_friend2 = Person("Andy", 5)
+#
+# print(Person.eyes)
+# print(my_friend.eyes)
+# print(my_friend2.eyes)
 
 # my_friend.speak()
 # print(my_friend.name)  # Alice, accede al atributo name del objeto my_friend
